@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A modern furniture e-commerce storefront." />
+    <title>ORBIT — Modern living, made simple.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="announcement">Complimentary delivery on orders over $150 <span>•</span> 30-day returns</div>
+    <header class="site-header">
+      <a href="#top" class="brand" aria-label="Orbit home">ORBIT<span>®</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#shop">Shop</a><a href="#new">New arrivals</a><a href="#story">Our story</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="searchButton" aria-label="Search products">⌕</button>
+        <button class="icon-button" aria-label="Account">♙</button>
+        <button class="bag-button" id="cartButton" aria-label="Open shopping bag">Bag <span id="cartCount">0</span></button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">The autumn edit / 2026</p>
+          <h1>Rooms worth<br /><em>staying in.</em></h1>
+          <p class="hero-text">Thoughtfully chosen objects for the rituals that make a house feel like home.</p>
+          <a class="primary-link" href="#shop">Shop the collection <span>↗</span></a>
+        </div>
+        <div class="hero-image image-tint">
+          <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1600&q=85" alt="Warm modern living room" />
+          <div class="image-label"><span>01</span> Quiet forms, lasting materials</div>
+        </div>
+        <p class="hero-number">01 — 04</p>
+      </section>
+
+      <section class="category-strip" aria-label="Shop by category">
+        <a href="#shop"><span>Seating</span><b>↗</b></a>
+        <a href="#shop"><span>Lighting</span><b>↗</b></a>
+        <a href="#shop"><span>Objects</span><b>↗</b></a>
+        <a href="#shop"><span>Textiles</span><b>↗</b></a>
+      </section>
+
+      <section class="collection" id="shop">
+        <div class="section-heading">
+          <div><p class="eyebrow">Selected for you</p><h2>Made to live with.</h2></div>
+          <button class="text-button" id="filterButton">Filter <span>＋</span></button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="editorial" id="new">
+        <div class="editorial-image"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85" alt="Sunlit interior with a wooden chair" /></div>
+        <div class="editorial-copy">
+          <p class="eyebrow">Design notes</p>
+          <h2>There is beauty<br />in the <em>everyday.</em></h2>
+          <p>We make a case for buying less and choosing well. Meet the makers and materials behind the season.</p>
+          <a class="primary-link dark" href="#story">Read our journal <span>↗</span></a>
+        </div>
+      </section>
+
+      <section class="newsletter" id="story">
+        <p class="eyebrow">A note from Orbit</p>
+        <h2>Good things, <em>occasionally.</em></h2>
+        <form id="newsletterForm"><label class="sr-only" for="email">Your email address</label><input id="email" type="email" placeholder="Your email address" required /><button type="submit">Join us <span>→</span></button></form>
+        <p class="fine-print" id="formMessage">New pieces, good stories, no clutter.</p>
+      </section>
+    </main>
+
+    <footer><div class="brand">ORBIT<span>®</span></div><p>© 2026 Orbit Studio. Made for slower living.</p><div><a href="#">Instagram</a><a href="#">Pinterest</a></div></footer>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Shopping bag" aria-hidden="true">
+      <div class="cart-header"><h2>Your bag <span id="cartTitleCount">(0)</span></h2><button class="close-button" id="closeCart" aria-label="Close shopping bag">×</button></div>
+      <div id="cartItems" class="cart-items"><p class="empty-cart">Your bag is waiting for something lovely.</p></div>
+      <div class="cart-footer"><div class="cart-total"><span>Subtotal</span><strong id="cartTotal">$0</strong></div><button class="checkout-button" id="checkoutButton">Checkout <span>→</span></button><p>Taxes and delivery calculated at checkout.</p></div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
