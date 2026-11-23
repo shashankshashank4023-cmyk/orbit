@@ -13,7 +13,20 @@ grid.innerHTML = products.map(product => `
   <article class="product-card">
     <div class="product-image"><img src="${product.image}" alt="${product.name}" />${product.tag ? `<span class="tag">${product.tag}</span>` : ''}<button class="add-button" data-id="${product.id}" aria-label="Add ${product.name} to cart">+</button></div>
     <div class="product-info"><div><h3 class="product-name">${product.name}</h3><p class="product-type">${product.type}</p></div><p class="product-price">${money(product.price)}</p></div>
-  </article>`).join('');
+  </article>`).join('');const navButton = document.querySelector('#navButton');
+const primaryNav = document.querySelector('#primaryNav');
+function closeNavigation() {
+  primaryNav.classList.remove('open');
+  navButton.setAttribute('aria-expanded', 'false');
+  navButton.setAttribute('aria-label', 'Open navigation');
+}
+navButton.addEventListener('click', () => {
+  const isOpen = primaryNav.classList.toggle('open');
+  navButton.setAttribute('aria-expanded', String(isOpen));
+  navButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+});
+primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNavigation));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') closeNavigation(); });
 
 const panel = document.querySelector('#cartPanel');
 const overlay = document.querySelector('#overlay');
